@@ -100,5 +100,5 @@ I plan to store all of the data in MongoDB, create the user interface with Kotli
 |------------|-------------------------|---------|
 | 11/17/2026 | Brainstorm Ideas        | 2       |
 | 11/17/2026 | Initialize Project Code | 0.5     |
-| 11/21/2026 | Project Initial Design  |         |
-| **Total**  |                         | **2.5** |
+| 11/21/2026 | Project Initial Design  |   1.5      |
+| **Total**  |                         | **4** |
