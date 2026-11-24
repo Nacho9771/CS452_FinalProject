@@ -1,4 +1,4 @@
-# CS 452 Final Project
+# My Kitchen - Super Mega Hyper Artificial Intelligence Software for Cooking
 
 ------------------------------------------------------------------------
 
