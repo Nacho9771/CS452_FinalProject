@@ -1,5 +1,17 @@
 # My Kitchen - Super Mega Hyper Artificial Intelligence Software for Cooking
 
+Current product behavior is defined in [AppFlow.md](AppFlow.md), supplemented by
+the original goals below. The initial design is historical where it conflicts
+with that flow.
+
+Development has started with a stateless Python API for recipe serving and unit
+conversion previews. See [the development and debugging guide](docs/DEVELOPMENT.md)
+for setup, an example request, the service map, implemented limitations, and build order.
+Firebase-verified account routes and MongoDB profile/kitchen adapters are now
+implemented; live setup and verification are in progress. See
+[Firebase and MongoDB setup](docs/FIREBASE_MONGODB.md). Redis, Ollama, mobile screens,
+and external data integrations are not connected yet.
+
 ------------------------------------------------------------------------
 
 ### Brainstorming Session
@@ -40,7 +52,7 @@ i like finding good deals
 
 ### Initial Project Design
 
-The refined, Android-first project proposal, ERD, system diagram, and daily goals are in [My Kitchen — Initial Project Design](INITIAL_DESIGN.md). The notes below preserve the original brainstorming and pitch; the refined design identifies the class-project scope and future features.
+The earlier Android-first proposal, ERD, system diagram, and daily goals are in [My Kitchen — Initial Project Design](INITIAL_DESIGN.md). The notes below preserve the original brainstorming and pitch. Follow AppFlow.md for current behavior; the earlier scope and schedule need revision.
 
 I am going to create a recipe app called My Kitchen. It will operate as a pantry stocker, a tailored recipe search engine based on preferences and ingredients listed, and a meal planner based on store location(s) and restricted by a budget.
 

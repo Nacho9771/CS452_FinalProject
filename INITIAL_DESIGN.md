@@ -126,7 +126,7 @@ These are estimated hours, not completed log entries. The existing README record
 ## Project Schedule
 
 | Date | Hours | Goal and Evidence of Completion |
-|------------------|-----------------:|-------------------------------------|
+|----------------------------------------------------------------------------|----------------:|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Nov 21–23 | 4 | Refine scope, ERD, architecture, and schedule. Publish initial-design Markdown. Review the design with a peer/TA (1 collaboration hour). Create Android and FastAPI skeletons and demonstrate connectivity through a health endpoint. |
 | Nov 24–25 | 5 | Implement Firebase authentication and API token verification. Connect MongoDB Atlas, define schemas and canonical ingredient IDs, and seed 20–30 recipes with attribution. Implement kitchen and preference endpoints with ownership checks. |
 | Nov 26 | 0 | Thanksgiving break. |

@@ -1,0 +1,15 @@
+{
+  "expected_revision": 0,
+  "profile": {
+    "first_name": "Example",
+    "last_name": "Cook",
+    "household_size": 4,
+    "measurement_system": "us",
+    "default_cooking_minutes": 30,
+    "cuisine_preferences": ["Italian", "Chinese"],
+    "exclusive_cuisines": false,
+    "dietary_restrictions": [],
+    "apply_dietary_restrictions": true,
+    "onboarding_step": "appliances"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "recipe": {
+    "title": "Measurement practice (development example)",
+    "servings": 2,
+    "ingredients": [
+      {"name": "rice", "original_text": "1 US cup uncooked rice", "quantity": "1", "unit": "cup"},
+      {"name": "water", "original_text": "2 US cups water", "quantity": "2", "unit": "cup"},
+      {"name": "salt", "original_text": "Salt to taste"}
+    ],
+    "steps": ["Follow the rice package's cooking instructions."],
+    "prep_minutes": 5,
+    "cook_minutes": 20
+  },
+  "target_servings": 4,
+  "target_units": {"0": "tbsp", "1": "ml"}
+}

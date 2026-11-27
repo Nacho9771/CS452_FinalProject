@@ -8,3 +8,16 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local configuration and development tools
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.local/
+.gradle/
+local.properties
+*service-account*.json

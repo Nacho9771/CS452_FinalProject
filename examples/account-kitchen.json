@@ -1,0 +1,8 @@
+{
+  "expected_revision": 1,
+  "kitchen": {
+    "appliances": {"skillet": true, "stovetop": true, "blender": false},
+    "spices": ["ginger", "pepper"],
+    "spice_setup": "provided"
+  }
+}
