@@ -1,0 +1,17 @@
+{
+  "client_request_id": "e82d62e4-bcbe-4b7c-9803-826de48f50e0",
+  "recipe": {
+    "title": "Measurement practice (development example)",
+    "description": "Replace this example with your own recipe before saving.",
+    "servings": 2,
+    "ingredients": [
+      {"name": "rice", "original_text": "1 US cup uncooked rice", "quantity": "1", "unit": "cup"},
+      {"name": "salt", "original_text": "Salt to taste"}
+    ],
+    "steps": ["Follow the rice package's cooking instructions."],
+    "prep_minutes": 5,
+    "cook_minutes": 20,
+    "equipment": ["stovetop", "pot"],
+    "visibility": "private"
+  }
+}

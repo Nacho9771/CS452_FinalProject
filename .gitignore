@@ -21,3 +21,7 @@ htmlcov/
 .gradle/
 local.properties
 *service-account*.json
+# Android build output and local Firebase client setup
+mobile/**/build/
+mobile/.kotlin/
+mobile/app/google-services.json

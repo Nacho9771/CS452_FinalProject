@@ -4,8 +4,9 @@ This milestone implements backend account/profile/kitchen operations. The mobile
 Google sign-in interface is not built yet. Tests use injected test doubles and
 mocked SDK calls, not fake tokens accepted by the production server. On November 26,
 Google accepted the local Firebase Admin credential and a live MongoDB Atlas ping
-succeeded. A real Firebase user ID token and account read/write are still pending,
-so full end-to-end verification is not complete.
+succeeded. On November 27, browser inspection confirmed real Google sign-in and
+loading the account from MongoDB (revision 0). Profile/kitchen edits and the new
+manual recipe editor still need their own live browser save checks.
 
 ## 1. Firebase Google authentication
 

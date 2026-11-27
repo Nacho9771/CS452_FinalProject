@@ -13,14 +13,17 @@ from uuid import uuid4
 from fastapi import FastAPI, HTTPException, Request
 
 from .account_api import router as account_router
+from .dev_signin import router as dev_router
 from .models import PreviewRequest, RecipePreview
+from .recipe_api import router as recipe_router
+from .recipe_library import MongoRecipes
 from .recipes import preview_recipe
 from .services import FirebaseIdentity, MongoAccounts
 
 logger = logging.getLogger("uvicorn.error")
 
 
-def create_app(*, identity=None, accounts=None) -> FastAPI:
+def create_app(*, identity=None, accounts=None, recipes=None) -> FastAPI:
     @asynccontextmanager
     async def lifespan(application):
         yield
@@ -38,7 +41,11 @@ def create_app(*, identity=None, accounts=None) -> FastAPI:
     )
     application.state.identity = identity if identity is not None else FirebaseIdentity()
     application.state.accounts = accounts if accounts is not None else MongoAccounts()
+    application.state.recipes = (
+        recipes if recipes is not None else MongoRecipes(application.state.accounts)
+    )
     application.include_router(account_router)
+    application.include_router(dev_router)
 
     @application.middleware("http")
     async def trace_request(request: Request, call_next):
@@ -87,6 +94,8 @@ def create_app(*, identity=None, accounts=None) -> FastAPI:
         except ValueError as error:
             raise HTTPException(status_code=422, detail=str(error)) from error
 
+    # Register /preview before /{recipe_id} so the static operation stays unambiguous.
+    application.include_router(recipe_router)
     return application
 
 

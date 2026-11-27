@@ -4,6 +4,19 @@
 `INITIAL_DESIGN.md` is historical and needs revision where it conflicts with the flow.
 This guide describes implemented behavior separately from future integrations.
 
+The [private recipe library](RECIPE_LIBRARY.md) now adds owner-only creation,
+listing, reading, editing, and schema.org export. The local helper includes a
+manual editor and recipe cards. It does not yet search/import internet recipes,
+publish, rate, or schedule them. The [native Kotlin Android client](MOBILE.md) now
+provides the four-tab shell, Google sign-in integration, private-recipe photo grid,
+and recipe details. Native onboarding, creation/editing, and planning remain next steps.
+
+The [local Google sign-in helper](DEV_SIGNIN.md) is now implemented at
+<http://localhost:8000/dev/sign-in>. It tests real Firebase sign-in and account/
+kitchen persistence through the existing API. Google sign-in is enabled in the
+configured Firebase project and browser account loading was verified. This helper is not the
+Kotlin mobile interface and does not replace the AppFlow onboarding design.
+
 The [course-to-app map](COURSE_ALIGNMENT.md) records the November 26 Canvas review,
 the concepts behind each backend stage, and the actual final-report due date.
 
@@ -18,8 +31,9 @@ The next backend milestone now adds Firebase-verified account routes and MongoDB
 profile/kitchen persistence. Follow [Firebase and MongoDB setup](FIREBASE_MONGODB.md)
 for configuration, endpoint examples, ownership, revision conflicts, and debugging.
 Firebase Admin credentials were accepted by Google and a live MongoDB Atlas ping
-succeeded. User sign-in and account read/write verification are still pending.
-Mobile Google sign-in is not built yet.
+succeeded. Browser Google sign-in/account loading and isolated live recipe-storage
+checks have passed. Android Google sign-in is implemented; a real emulator login
+still needs manual verification. See MOBILE.md for the separate native build results.
 
 From the project directory in PowerShell:
 

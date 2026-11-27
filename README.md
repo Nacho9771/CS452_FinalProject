@@ -2,7 +2,7 @@
 
 Current product behavior is defined in [AppFlow.md](AppFlow.md), supplemented by the original goals below. The initial design is historical where it conflicts with that flow.
 
-Development has started with a stateless Python API for recipe serving and unit conversion previews. See [the development and debugging guide](docs/DEVELOPMENT.md) for setup, an example request, the service map, implemented limitations, and build order. Firebase, MongoDB, Redis, Ollama, mobile screens, and external data integrations are not connected yet.
+Development includes recipe serving/unit previews, Firebase-protected accounts and kitchens, a [private manual recipe library](docs/RECIPE_LIBRARY.md), and the first [native Android screens](docs/MOBILE.md). See [the development and debugging guide](docs/DEVELOPMENT.md) for setup, examples, service connections, implemented limitations, and build order. Redis, Ollama, and external recipe/store integrations are not connected yet.
 
 ------------------------------------------------------------------------
 
@@ -108,4 +108,5 @@ I plan to store all of the data in MongoDB, create the user interface with Kotli
 | 11/24/2026 | Refining Design and AI agent assistance | 2     |
 | 11/26/2026 | Create AppFlow Markdown File            | 2     |
 | 11/26/2026 | Finish MongoDB and Firebase Setup       | 3     |
-| **Total**  |                                         | **6** |
+| 11/27/2026 | Creating Mobile UI                      | 4     |
+| **Total**  |                                         | **10** |

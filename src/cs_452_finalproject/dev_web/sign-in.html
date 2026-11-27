@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Kitchen · Account connection check</title>
+  <link rel="stylesheet" href="/dev/sign-in.css">
+  <script type="module" src="/dev/sign-in.js"></script>
+</head>
+<body>
+<main>
+  <header><p class="eyebrow">MY KITCHEN · LOCAL DEVELOPMENT</p>
+    <h1>A place for your kitchen.</h1>
+    <p>Check Google sign-in and save your first kitchen. This is a development helper;
+      the mobile onboarding screens come next.</p>
+  </header>
+  <section aria-labelledby="connection-title">
+    <h2 id="connection-title">1. Connect your Google account</h2>
+    <p>Signing in creates your My Kitchen account if it doesn't exist yet.</p>
+    <div class="actions"><button id="signin" disabled>Continue with Google</button>
+      <button id="signout" class="secondary" disabled>Sign out</button>
+      <button id="reload" class="secondary" disabled>Reload saved data</button></div>
+    <p id="identity">Not signed in.</p>
+    <p id="status" role="status" aria-live="polite">Loading sign-in tools…</p>
+  </section>
+  <section aria-labelledby="profile-title">
+    <h2 id="profile-title">2. Save your profile</h2>
+    <form id="profile-form"><fieldset id="profile-fields" disabled>
+      <div class="grid">
+        <label>First name<input id="first-name" autocomplete="given-name" maxlength="200"></label>
+        <label>Last name<input id="last-name" autocomplete="family-name" maxlength="200"></label>
+        <label>People you cook for<input id="household" type="number" min="1" max="1000" value="1" required></label>
+        <label>Default cooking time (minutes)<input id="minutes" type="number" min="1" max="1440" value="30" required></label>
+        <label>Preferred measurements<select id="measurements"><option value="us">US cups / spoons</option><option value="metric">Metric</option></select></label>
+      </div><button type="submit">Save profile</button>
+    </fieldset></form>
+  </section>
+  <section aria-labelledby="kitchen-title">
+    <h2 id="kitchen-title">3. Save your kitchen</h2>
+    <p>Use comma-separated appliance IDs, such as <code>skillet, stovetop</code>.
+      Unlisted appliances are unanswered. The illustrated swipe catalog comes later.</p>
+    <form id="kitchen-form"><fieldset id="kitchen-fields" disabled>
+      <label>Appliances you own<input id="owned" placeholder="skillet, stovetop"></label>
+      <label>Appliances you don't own<input id="not-owned" placeholder="blender"></label>
+      <label>Spices on hand<input id="spices" placeholder="ginger, pepper"></label>
+      <label>Spice setup<select id="spice-setup"><option value="not_started">Not started</option><option value="skipped">Maybe later</option><option value="provided">I entered my spices</option></select></label>
+      <button type="submit">Save kitchen</button>
+    </fieldset></form>
+  </section>
+  <section aria-labelledby="recipes-title">
+    <h2 id="recipes-title">4. Your Recipes</h2>
+    <p>Your manually added recipes stay private. Internet discovery and publishing come later.</p>
+    <fieldset id="library-fields" disabled>
+      <div class="actions"><button id="new-recipe" type="button">Add a recipe</button>
+        <button id="reload-recipes" type="button" class="secondary">Reload recipes</button></div>
+      <p id="library-status" role="status">Sign in to load your recipes.</p>
+      <div id="recipe-list" class="recipe-list"></div>
+      <button id="more-recipes" type="button" class="secondary" hidden>Load more recipes</button>
+    </fieldset>
+  </section>
+  <section aria-labelledby="recipe-editor-title" id="recipe-editor" hidden>
+    <h2 id="recipe-editor-title">Add a private recipe</h2>
+    <form id="recipe-form"><fieldset id="recipe-fields" disabled>
+      <label>Recipe name<input id="recipe-title" maxlength="300" required></label>
+      <label>Description<textarea id="recipe-description" maxlength="4000" rows="2"></textarea></label>
+      <div class="grid">
+        <label>Servings<input id="recipe-servings" type="number" min="1" max="1000" value="2" required></label>
+        <label>Prep time (minutes)<input id="recipe-prep" type="number" min="0" value="0" required></label>
+        <label>Cook time (minutes)<input id="recipe-cook" type="number" min="0" value="0" required></label>
+        <label>Cuisine<input id="recipe-cuisine" maxlength="100"></label>
+        <label>Estimated whole-recipe cost (optional)<input id="recipe-cost" type="number" min="0" step="0.01"></label>
+        <label>Currency<input id="recipe-currency" maxlength="3" minlength="3" pattern="[A-Z]{3}" value="USD" required></label>
+      </div>
+      <p>Keep original ingredient wording. Numeric amounts and units are optional for entries such as “salt to taste.”</p>
+      <div id="recipe-ingredients"></div>
+      <button id="add-ingredient" type="button" class="secondary">Add ingredient</button>
+      <label>Steps (one step per line)<textarea id="recipe-steps" rows="5" required></textarea></label>
+      <label>Equipment (comma-separated)<input id="recipe-equipment" placeholder="skillet, stovetop"></label>
+      <label>Source link (optional; stored without importing)<input id="recipe-source" type="url"></label>
+      <label>Photo link (optional)<input id="recipe-image" type="url"></label>
+      <div class="actions"><button type="submit">Save private recipe</button>
+        <button id="cancel-recipe" type="button" class="secondary">Close editor</button></div>
+      <p id="recipe-status" role="status" aria-live="polite"></p>
+    </fieldset></form>
+  </section>
+  <details><summary>Inspect the account response</summary>
+    <p>This shows your saved account, never your sign-in token or server credentials.</p>
+    <pre id="account-output">Sign in to load your account.</pre>
+  </details>
+  <footer>To test persistence: save, sign out, sign back in, then reload saved data.
+    <a href="/docs">Open API documentation</a></footer>
+</main>
+</body>
+</html>

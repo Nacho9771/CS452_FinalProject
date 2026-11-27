@@ -45,12 +45,17 @@ class Ingredient(InputModel):
 
 class Recipe(InputModel):
     title: NonEmptyText
+    description: str = Field(default="", max_length=4000)
     servings: int = Field(ge=1, le=1000, strict=True)
     ingredients: list[Ingredient] = Field(min_length=1, max_length=200)
     steps: list[NonEmptyText] = Field(min_length=1, max_length=200)
     prep_minutes: int = Field(ge=0, strict=True)
     cook_minutes: int = Field(ge=0, strict=True)
     source_url: HttpUrl | None = None
+    image_urls: list[HttpUrl] = Field(default_factory=list, max_length=10)
+    cuisine: str = Field(default="", max_length=100)
+    estimated_cost: Annotated[Decimal, Field(ge=0, allow_inf_nan=False)] | None = None
+    currency: str = Field(default="USD", pattern="^[A-Z]{3}$")
     equipment: list[NonEmptyText] = Field(default_factory=list)
     # Recipe creation will default to private when persistence is connected.
     visibility: str = Field(default="private", pattern="^(private|public)$")
