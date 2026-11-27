@@ -1,16 +1,8 @@
 # My Kitchen - Super Mega Hyper Artificial Intelligence Software for Cooking
 
-Current product behavior is defined in [AppFlow.md](AppFlow.md), supplemented by
-the original goals below. The initial design is historical where it conflicts
-with that flow.
+Current product behavior is defined in [AppFlow.md](AppFlow.md), supplemented by the original goals below. The initial design is historical where it conflicts with that flow.
 
-Development has started with a stateless Python API for recipe serving and unit
-conversion previews. See [the development and debugging guide](docs/DEVELOPMENT.md)
-for setup, an example request, the service map, implemented limitations, and build order.
-Firebase-verified account routes and MongoDB profile/kitchen adapters are now
-implemented; live setup and verification are in progress. See
-[Firebase and MongoDB setup](docs/FIREBASE_MONGODB.md). Redis, Ollama, mobile screens,
-and external data integrations are not connected yet.
+Development has started with a stateless Python API for recipe serving and unit conversion previews. See [the development and debugging guide](docs/DEVELOPMENT.md) for setup, an example request, the service map, implemented limitations, and build order. Firebase, MongoDB, Redis, Ollama, mobile screens, and external data integrations are not connected yet.
 
 ------------------------------------------------------------------------
 
@@ -108,10 +100,12 @@ I plan to store all of the data in MongoDB, create the user interface with Kotli
 
 ## Hours Spent on Project
 
-| Date       | What                    | Hours   |
-|------------|-------------------------|---------|
-| 11/17/2026 | Brainstorm Ideas        | 2       |
-| 11/17/2026 | Initialize Project Code | 0.5     |
-| 11/21/2026 | Project Initial Design  |   1.5      |
-| 11/24/2026 | Refining Design and AI agent assistance  |   2      |
-| **Total**  |                         | **6** |
+| Date       | What                                    | Hours |
+|------------|-----------------------------------------|-------|
+| 11/17/2026 | Brainstorm Ideas                        | 2     |
+| 11/17/2026 | Initialize Project Code                 | 0.5   |
+| 11/21/2026 | Project Initial Design                  | 1.5   |
+| 11/24/2026 | Refining Design and AI agent assistance | 2     |
+| 11/26/2026 | Create AppFlow Markdown File            | 2     |
+| 11/26/2026 | Finish MongoDB and Firebase Setup       | 3     |
+| **Total**  |                                         | **6** |
